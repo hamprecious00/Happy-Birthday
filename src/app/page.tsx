@@ -9,18 +9,15 @@ import GiftSection from '@/components/gift-section';
 import FooterSection from '@/components/footer-section';
 import AudioController from '@/components/audio-controller';
 
-// Placeholder for romantic instrumental music
-const romanticMusicSrc = "public/assets/Birthday.mp3"; 
+// Corrected path for romantic instrumental music in the public/assets folder
+const romanticMusicSrc = "/assets/Birthday.mp3"; 
 // NOTE: Actual audio file needs to be placed in public/assets folder.
 // For now, this will likely 404 unless a placeholder file is added.
-// Using a generic placeholder if not available:
-// const romanticMusicSrc = "https://www.chosic.com/wp-content/uploads/2022/02/Romantic-Music-For-Your-Video-Wedding-Love-Story-Piano-Cinematic-Atmospheric.mp3";
-// Due to external link policies, it's better to use a local placeholder if possible or handle failure gracefully.
 
 export default function WinnyBirthdayPage() {
   return (
     <>
-      <Head children={undefined}>
+      <Head>
         {/* Preload font or other critical assets if necessary */}
       </Head>
       
