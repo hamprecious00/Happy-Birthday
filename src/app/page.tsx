@@ -10,7 +10,7 @@ import FooterSection from '@/components/footer-section';
 import AudioController from '@/components/audio-controller';
 
 // Placeholder for romantic instrumental music
-const romanticMusicSrc = "/assets/romantic_background_music.mp3"; 
+const romanticMusicSrc = "public/assets/Birthday.mp3"; 
 // NOTE: Actual audio file needs to be placed in public/assets folder.
 // For now, this will likely 404 unless a placeholder file is added.
 // Using a generic placeholder if not available:
@@ -20,7 +20,7 @@ const romanticMusicSrc = "/assets/romantic_background_music.mp3";
 export default function WinnyBirthdayPage() {
   return (
     <>
-      <Head>
+      <Head children={undefined}>
         {/* Preload font or other critical assets if necessary */}
       </Head>
       
