@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -14,12 +15,19 @@ interface Memory {
 }
 
 const memories: Memory[] = [
-  { id: '1', src: 'https://picsum.photos/seed/memory1/400/300', alt: 'Couple on their first date', caption: 'First Date Magic ✨', hint: 'couple date' },
-  { id: '2', src: 'https://picsum.photos/seed/memory2/400/300', alt: 'Couple laughing together', caption: 'Our Laughter Echoes 😂', hint: 'couple laughing' },
-  { id: '3', src: 'https://picsum.photos/seed/memory3/400/300', alt: 'Couple holding hands', caption: 'Forever Us 💖', hint: 'couple hands' },
-  { id: '4', src: 'https://picsum.photos/seed/memory4/400/300', alt: 'Couple enjoying a sunny day', caption: 'Sunny Days Together ☀️', hint: 'couple beach' },
-  { id: '5', src: 'https://picsum.photos/seed/memory5/400/300', alt: 'Couple in a cozy setting', caption: 'Cozy Nights In 🌙', hint: 'couple home' },
-  { id: '6', src: 'https://picsum.photos/seed/memory6/400/300', alt: 'Couple on an adventure', caption: 'Adventures Await 🚀', hint: 'couple travel' },
+  { id: '1', src: '/assets/images/1.jpeg', alt: 'Couple on their first date', caption: 'First Date Magic ✨', hint: 'couple date' },
+  { id: '2', src: '/assets/images/2.jpeg', alt: 'Couple laughing together', caption: 'Our Laughter Echoes 😂', hint: 'couple laughing' },
+  { id: '3', src: '/assets/images/3.jpeg', alt: 'Couple holding hands', caption: 'Forever Us 💖', hint: 'couple hands' },
+  { id: '4', src: '/assets/images/4.jpeg', alt: 'Couple enjoying a sunny day', caption: 'Sunny Days Together ☀️', hint: 'couple beach' },
+  { id: '5', src: '/assets/images/5.jpeg', alt: 'Couple in a cozy setting', caption: 'Cozy Nights In 🌙', hint: 'couple home' },
+  { id: '6', src: '/assets/images/6.jpeg', alt: 'Couple on an adventure', caption: 'Adventures Await 🚀', hint: 'couple travel' },
+  { id: '7', src: '/assets/images/7.jpg', alt: 'Couple on their first date', caption: 'First Date Magic ✨', hint: 'couple date' },
+  { id: '8', src: '/assets/images/8.jpeg', alt: 'Couple laughing together', caption: 'Our Laughter Echoes 😂', hint: 'couple laughing' },
+  { id: '9', src: '/assets/images/9.jpeg', alt: 'Couple holding hands', caption: 'Forever Us 💖', hint: 'couple hands' },
+  { id: '10', src: '/assets/images/10.jpeg', alt: 'Couple enjoying a sunny day', caption: 'Sunny Days Together ☀️', hint: 'couple beach' },
+  { id: '11', src: '/assets/images/11.jpeg', alt: 'Couple in a cozy setting', caption: 'Cozy Nights In 🌙', hint: 'couple home' },
+  { id: '12', src: '/assets/images/12.jpeg', alt: 'Couple on an adventure', caption: 'Adventures Await 🚀', hint: 'couple travel' },
+  { id: '13', src: '/assets/images/13.jpeg', alt: 'Couple on an adventure', caption: 'Adventures Await 🚀', hint: 'couple travel' },
 ];
 
 const MemoriesGallery: React.FC = () => {
