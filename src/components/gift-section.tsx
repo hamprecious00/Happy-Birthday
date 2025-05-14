@@ -9,17 +9,19 @@ import CountdownDisplay from './countdown-display';
 const GiftSection: React.FC = () => {
   const [isBoxOpen, setIsBoxOpen] = useState(false);
   const [nextDate, setNextDate] = useState('');
+  const [formattedDate, setFormattedDate] = useState('');
 
   useEffect(() => {
-    // Set the next date for the countdown. Example: May 22nd of the current year.
-    const currentYear = new Date().getFullYear();
-    const countdownTargetDate = new Date(currentYear, 4, 22); // Month is 0-indexed, so 4 is May
-    
-    // If May 22nd has passed this year, set it for next year.
-    if (countdownTargetDate < new Date()) {
-      countdownTargetDate.setFullYear(currentYear + 1);
-    }
-    setNextDate(countdownTargetDate.toISOString());
+    const now = new Date();
+    const target = new Date(now);
+    target.setMonth(target.getMonth() + 23); // 1 year + 11 months = 23 months
+
+    setNextDate(target.toISOString());
+    setFormattedDate(target.toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }));
   }, []);
 
   const handleOpenBox = () => {
@@ -30,7 +32,7 @@ const GiftSection: React.FC = () => {
     <section id="surprise" className="bg-secondary">
       <div className="container mx-auto text-center">
         <div className="inline-flex items-center justify-center p-3 bg-primary/20 rounded-full mb-4 animate-fadeIn">
-            <Gift className="h-10 w-10 text-primary" />
+          <Gift className="h-10 w-10 text-primary" />
         </div>
         <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-8 animate-fadeIn animate-fadeIn-delay-1">A Little Surprise For You!</h2>
 
@@ -52,9 +54,6 @@ const GiftSection: React.FC = () => {
             </Card>
           )}
 
-          {/* Actual box structure for animation (conceptual) - simplified for this component */}
-          {/* The click above triggers the class change, and CSS handles the "opening" of the card content below */}
-          
           {isBoxOpen && (
             <Card className="shadow-xl rounded-lg overflow-hidden gift-box-contents bg-card">
               <CardContent className="p-6 md:p-8 space-y-6">
@@ -89,6 +88,9 @@ const GiftSection: React.FC = () => {
                 <div>
                   <CalendarDays className="h-8 w-8 text-primary mx-auto mb-3" />
                   <CountdownDisplay targetDate={nextDate} targetEventName="our next adventure" />
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Date: <span className="font-medium text-foreground">{formattedDate}</span>
+                  </p>
                 </div>
 
               </CardContent>
